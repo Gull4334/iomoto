@@ -1,0 +1,21 @@
+.countires-area{
+    padding: 8px 20px;
+    margin-top: 10px;
+    background-color: #E7E9EB;
+    border-radius: 5px;
+}
+
+.bg-white{
+    color: #000!important;
+    background-color: #fff!important;
+}
+
+.box-padding{
+    padding: 8px 16px!important;
+}
+
+.locale-checkbox{
+    position: relative;
+    top: 0.1em;
+    right: 3px;
+}

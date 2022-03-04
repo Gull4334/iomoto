@@ -1,0 +1,13 @@
+{
+    "home": "Home",
+    "countries": "Countries",
+    "searchCountry": "Search Country",
+    "countryName": "Country Name",
+    "countryCapital": "Country Name",
+
+    "p1": "Hello iomoto.",
+    "p2": "This is a code challenge in which we can see the list of the countries in the Countries tab,",
+    "p3": "Countries are fetched from the api on the app start and stored them in the Redux store.",
+    "p4":"In the Header, you can also see the language checkbox for the multilingual functionality of the app, hit the checkbox to see the magic."
+
+}
