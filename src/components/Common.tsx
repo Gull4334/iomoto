@@ -4,6 +4,7 @@ export interface ICountryName {
 }
 export interface ICountry {
     name: ICountryName,
-    capital: []
+    capital: [],
+    cca2: string
 }
 

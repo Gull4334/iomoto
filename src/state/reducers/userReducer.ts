@@ -17,21 +17,25 @@ const initialState: myStore = {
 
 const userReducer = (state = initialState, action: actionMapper) => {
     switch (action.type) {
-        case ActionType.ALLCOUNTRIES: {            
+        case ActionType.ALLCOUNTRIES: {
             return action.payload;
         }
-        case ActionType.PAGINATIONCOUNTRIES: {            
+        case ActionType.PAGINATIONCOUNTRIES: {
             let { limit, page, countries, searchKeyword } = action.payload;
             debugger;
-            let searchedCountriesList:ICountry[] = [];
-            if(searchKeyword){
+            let searchedCountriesList: ICountry[] = [];
+            if (searchKeyword) {
                 countries.find(element => {
-                    if(element.name.common.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())){
+                    if (
+                        element.name.common.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())
+                        ||
+                        element.cca2.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase())
+                    ) {
                         searchedCountriesList.push(element);
                     }
-                })
+                });
             }
-            if(searchedCountriesList.length === 0){
+            if (searchedCountriesList.length === 0) {
                 searchedCountriesList = countries;
             }
             debugger;
@@ -39,7 +43,7 @@ const userReducer = (state = initialState, action: actionMapper) => {
                 ...state,
                 searchKeyword: searchKeyword,
                 searchedCountries: searchedCountriesList,
-                paginatedCountries: paginateList(page,limit, searchedCountriesList)
+                paginatedCountries: paginateList(page, limit, searchedCountriesList)
             }
             return allCountries;
         }

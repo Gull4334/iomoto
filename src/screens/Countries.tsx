@@ -56,11 +56,13 @@ const Countries = () => {
                     <table className="table table-striped">
                         <tbody><tr>
                             <th>{t('countryName')}</th>
+                            <th>Alpha Code</th>
                             <th>{t('countryCapital')}</th>
                         </tr>
                             {countriesList.map((country, countryIndex) => (
                                 <tr key={countryIndex}>
                                     <td>{country.name.common}</td>
+                                    <td>{country.cca2}</td>
                                     <td>{country.capital}</td>
                                 </tr>
                             ))}
