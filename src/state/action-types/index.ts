@@ -1,4 +1,4 @@
 export enum ActionType {
-    ALLCOUNTRIES = "all",
-    PAGINATIONCOUNTRIES = "pagination"
+  ALLCOUNTRIES = "all",
+  PAGINATIONCOUNTRIES = "pagination",
 }
