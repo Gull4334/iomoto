@@ -49,7 +49,7 @@ Open [http://localhost:3000/](http://localhost:3000/) with your browser to see t
 
 ### API endpoints
 
-Frontend consumes the following endpoints from rest countries API [full documentation here](https://restcountries.com/v3.1/)):
+Frontend consumes the following endpoints from rest countries API [full documentation here](https://restcountries.com):
 
 | Endpoint              | Usage in views         |
 | --------------------- | ---------------------- |
@@ -59,11 +59,12 @@ Frontend consumes the following endpoints from rest countries API [full document
 
 Routing of this application is managed with well known package named [`react-router-dom`](https://reactrouter.com/docs/en/v6/getting-started/overview) .
 
-when we need to add a new route, we have to go to routing file placed `src/routes/routing.tsx`. we will register new route here with a unique path.
+When we need to add a new route, we have to go to routing file placed in `src/routes/routing.tsx`. 
+We will register new route here with a unique path.
 
 ### TypeScript
 
-All `typescript` interfaces are placed in `src/models` files. This approach will help us to understand the expected reponse of each API.
+All `typescript` interfaces are placed in `src/models` folder. This approach will help us to understand the expected reponse of each API.
 
 ### Models
 
@@ -82,7 +83,7 @@ in the coverage folder under following address
 
 coverage/Icov-report/index.html
 
-run this file in the browser to see the code coverage of your app.
+Run this file in the browser to see the code coverage of your app.
 
 Feel free to contact me if you need any assistance.
 
