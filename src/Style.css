@@ -1,5 +1,5 @@
-.countires-area{
-    padding: 8px 20px;
+.container-area{
+    padding: 8px 20px !important;
     margin-top: 10px;
     background-color: #E7E9EB;
     border-radius: 5px;
@@ -34,4 +34,8 @@
 .nav-pills>li.active>button, .nav-pills>li.active>button:focus, .nav-pills>li.active>button:hover{
     color: #fff;
     background-color: #337ab7;
+}
+
+.nav-pills>li{
+    top: 4px;
 }

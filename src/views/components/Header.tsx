@@ -6,20 +6,19 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   let navigate = useNavigate();
 
-  const toggleActiveAndNavigateTab = (
-    element: React.MouseEvent<HTMLLIElement, MouseEvent>,
-    component: string
-  ) => {
-    if (document.getElementsByClassName("active").length > 0) {
-      let allElements = Array.from(document.querySelectorAll(".active"));
-      for (let element of allElements) {
-        element.classList.remove("active");
-      }
+  const initialLoad = () => {
+    let allElements = Array.from(document.querySelectorAll(".active"));
+    for (let element of allElements) {
+      element.classList.remove("active");
     }
-
-    element.currentTarget.className = "active";
-    navigate(component);
+    if (window.location.pathname === "/countries") {
+      document.getElementById("countriesTab")?.classList.add("active");
+    } else {
+      document.getElementById("homeTab")?.classList.add("active");
+    }
   };
+
+  initialLoad();
 
   const switchToGerman = (e: React.ChangeEvent<HTMLInputElement>) => {
     const languageValue = e.currentTarget.checked ? "gr" : "en";
@@ -27,17 +26,14 @@ const Header = () => {
   };
 
   return (
-    <>
-      <ul className="nav nav-pills container countires-area">
-        <li
-          className="active"
-          onClick={(e) => toggleActiveAndNavigateTab(e, "/")}
-          role="presentation"
-        >
+    <div className="container">
+      <ul className="nav nav-pills container-area">
+        <li id="homeTab" onClick={(e) => navigate("/")} role="presentation">
           <button type="button">{t("home")}</button>
         </li>
         <li
-          onClick={(e) => toggleActiveAndNavigateTab(e, "/countries")}
+          id="countriesTab"
+          onClick={(e) => navigate("/countries")}
           role="presentation"
         >
           <button type="button">{t("countries")}</button>
@@ -56,7 +52,7 @@ const Header = () => {
           </button>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

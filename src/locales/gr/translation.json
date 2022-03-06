@@ -5,7 +5,7 @@
   "countryName": "Länder Name",
   "countryCapital": "Landeshauptstadt",
 
-  "p1": "Hallo iomoto.",
+  "p1": "Hallo ",
   "p2": "Dies ist eine Code-Herausforderung, bei der wir die Liste der Länder auf der Registerkarte Länder sehen können,",
   "p3": "Länder werden beim App-Start aus der API geholt und im Redux Store abgelegt.",
   "p4": "In der Kopfzeile sehen Sie auch das Kontrollkästchen für die Sprache für die mehrsprachige Funktionalität der App. Aktivieren Sie das Kontrollkästchen, um die Magie zu sehen."

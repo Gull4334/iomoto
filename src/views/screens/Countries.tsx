@@ -20,7 +20,6 @@ const Countries = () => {
   const { UpdateCountiesList } = bindActionCreators(actionCreator, dispatch);
 
   useEffect(() => {
-
     const stateObject: countriesGlobalStore = {
       ...countriesGlobalState,
       searchKeyword: search,
@@ -30,53 +29,54 @@ const Countries = () => {
     UpdateCountiesList(stateObject);
   }, [page, search]);
 
- 
   const handlePageChange = (pageNumber: number) => {
     setPage(pageNumber);
   };
 
   return (
-    <div className="container countires-area">
-      <div className="form-group">
-        <label>{t("searchCountry")}</label>
-        <input
-          className="form-control"
-          type="text"
-          value={search}
-          placeholder={t("searchCountry")}
-          onChange={(e) => {
-            setSearch(e.currentTarget.value);
-            setPage(1);
-          }}
+    <div className="container">
+      <div className="container-area">
+        <div className="form-group">
+          <label>{t("searchCountry")}</label>
+          <input
+            className="form-control"
+            type="text"
+            value={search}
+            placeholder={t("searchCountry")}
+            onChange={(e) => {
+              setSearch(e.currentTarget.value);
+              setPage(1);
+            }}
+          />
+        </div>
+        <div className="row">
+          <div className="col box-padding">
+            <table className="table table-striped">
+              <tbody>
+                <tr>
+                  <th>{t("countryName")}</th>
+                  <th>Alpha Code</th>
+                  <th>{t("countryCapital")}</th>
+                </tr>
+                {countriesList.map((country, countryIndex) => (
+                  <tr key={countryIndex}>
+                    <td>{country.name.common}</td>
+                    <td>{country.cca2}</td>
+                    <td>{country.capital}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <Pagination
+          activePage={page}
+          itemsCountPerPage={limit}
+          totalItemsCount={countriesCount}
+          pageRangeDisplayed={5}
+          onChange={(e) => handlePageChange(e)}
         />
       </div>
-      <div className="row">
-        <div className="col box-padding">
-          <table className="table table-striped">
-            <tbody>
-              <tr>
-                <th>{t("countryName")}</th>
-                <th>Alpha Code</th>
-                <th>{t("countryCapital")}</th>
-              </tr>
-              {countriesList.map((country, countryIndex) => (
-                <tr key={countryIndex}>
-                  <td>{country.name.common}</td>
-                  <td>{country.cca2}</td>
-                  <td>{country.capital}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <Pagination
-        activePage={page}
-        itemsCountPerPage={limit}
-        totalItemsCount={countriesCount}
-        pageRangeDisplayed={5}
-        onChange={(e) => handlePageChange(e)}
-      />
     </div>
   );
 };
